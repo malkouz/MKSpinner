@@ -15,6 +15,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		CC640B53990C6F54E3574E48 /* Pods_MKSpinner_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36554284D8D8F63322D87816 /* Pods_MKSpinner_Example.framework */; };
+		EE84EF2E1D69B6B500C945EE /* MKSpinner.podspec in Resources */ = {isa = PBXBuildFile; fileRef = EE84EF2D1D69B6B500C945EE /* MKSpinner.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +46,8 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		69543279C3BD4E8737AC0A34 /* Pods-MKSpinner_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MKSpinner_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MKSpinner_Example/Pods-MKSpinner_Example.release.xcconfig"; sourceTree = "<group>"; };
 		75A75DAE026BFE661640511E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		A2A4B40E504C8D1E96A2A9E7 /* MKSpinner.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MKSpinner.podspec; path = ../MKSpinner.podspec; sourceTree = "<group>"; };
 		BBB1907D9B188AA605CF2B97 /* Pods-MKSpinner_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MKSpinner_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MKSpinner_Tests/Pods-MKSpinner_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		EE84EF2D1D69B6B500C945EE /* MKSpinner.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MKSpinner.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,7 +142,7 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				A2A4B40E504C8D1E96A2A9E7 /* MKSpinner.podspec */,
+				EE84EF2D1D69B6B500C945EE /* MKSpinner.podspec */,
 				3AED7DEC82A5B515392D0281 /* README.md */,
 				75A75DAE026BFE661640511E /* LICENSE */,
 			);
@@ -246,6 +247,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE84EF2E1D69B6B500C945EE /* MKSpinner.podspec in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
