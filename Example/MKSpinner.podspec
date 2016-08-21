@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
 s.name             = "MKSpinner"
-s.version          = "1.1.0"
+s.version          = "1.1.1"
 s.summary          = "A beautiful activity indicator written in Swift"
 s.description      = <<-DESC
 Same of SwidtSpinner 'https://github.com/icanzilb/SwiftSpinner' with changing spin animations
