@@ -24,7 +24,7 @@ s.ios.deployment_target = '8.0'
 
 s.requires_arc = true
 
-s.source_files = '../Classes/*'
+s.source_files = 'MKSpinner/Classes/*'
 s.frameworks = 'UIKit'
 
 end

@@ -7,35 +7,24 @@
 #
 
 Pod::Spec.new do |s|
+s.name             = "MKSpinner"
+s.version          = "1.1.0"
+s.summary          = "A beautiful activity indicator written in Swift"
+s.description      = <<-DESC
+Same of SwidtSpinner 'https://github.com/icanzilb/SwiftSpinner' with changing spin animations
+DESC
+s.homepage         = "https://github.com/malkouz/MKSpinner"
 
-  # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  These will help people to find your library, and whilst it
-  #  can feel like a chore to fill in it's definitely to your advantage. The
-  #  summary should be tweet-length, and the description more in depth.
-  #
+s.license          = 'None'
+s.author           = { "Moayad Al kouz" => "moayad_kouz9@hotmail.com" }
+s.source           = { :git => "https://github.com/malkouz/MKSpinner.git", :tag => s.version.to_s }
+s.social_media_url = 'https://twitter.com/malkouz'
 
-  s.name         = "MKSpinner"
-  s.version      = "1.0.1"
-  s.summary      = "a fantastic spinners."
+s.ios.deployment_target = '8.0'
 
-  s.description  = "a fantastic spinners"
+s.requires_arc = true
 
-  s.homepage     = "https://github.com/malkouz/MKSpinner"
+s.source_files = 'MKSpinner/Classes/*'
+s.frameworks = 'UIKit'
 
-  s.license      = "MIT"
-
-
-  s.author             =  "Moayad Al kouz"
-  # s.social_media_url   = "http://twitter.com/malkouz"
-
-
-  s.platform     = :ios, “8.0”
- s.source       = { :git => "https://github.com/malkouz/MKSpinner.git", :tag => "#{s.version}" }
-
-
-  s.source_files  = "Classes", "Classes/*.{h,m}"
-  s.exclude_files = "Classes/Exclude"
-
-
- end
+end
