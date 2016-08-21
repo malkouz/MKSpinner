@@ -16,14 +16,14 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MKSpinner"
-  s.version      = "1.1.0"
+  s.version      = "1.0.1"
   s.summary      = "a fantastic spinners."
 
   s.description  = "a fantastic spinners"
 
   s.homepage     = "https://github.com/malkouz/MKSpinner"
 
-  s.license      = "MIT"
+  s.license      = "None"
 
 
   s.author             =  "Moayad Al kouz"
@@ -34,7 +34,7 @@ Pod::Spec.new do |s|
  s.source       = { :git => "https://github.com/malkouz/MKSpinner.git", :tag => "#{s.version}" }
 
 
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
+  s.source_files  = "Classes", "Classes/*.{h,m}"
   s.exclude_files = "Classes/Exclude"
 
 
