@@ -1,5 +1,5 @@
 //
-//  MKNSpinner.swift //costomized Spinner
+//  Spinner.swift //costomized Spinner
 //  MKSpinner
 //
 //  Created by Moayad on 10/10/15.
@@ -147,22 +147,25 @@ public class MKNSpinner: UIView {
     
     
     func animateInnerRing(){
+        if((self.innerView.layer.animationForKey("rotateInner")) == nil){
+            let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+            rotationAnimation.fromValue = 0 * CGFloat(M_PI/180)
+            rotationAnimation.toValue = 360 * CGFloat(M_PI/180)
+            rotationAnimation.duration = Double(innerAnimationDuration)
+            rotationAnimation.repeatCount = HUGE
+            self.innerView.layer.addAnimation(rotationAnimation, forKey: "rotateInner")
+        }
         
-        let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
-        rotationAnimation.fromValue = 0 * CGFloat(M_PI/180)
-        rotationAnimation.toValue = 360 * CGFloat(M_PI/180)
-        rotationAnimation.duration = Double(innerAnimationDuration)
-        rotationAnimation.repeatCount = HUGE
-        self.innerView.layer.addAnimation(rotationAnimation, forKey: "rotateInner")
     }
     func animateOuterRing(){
-        
-        let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
-        rotationAnimation.fromValue = 360 * CGFloat(M_PI/180)
-        rotationAnimation.toValue = 0 * CGFloat(M_PI/180)
-        rotationAnimation.duration = Double(outerAnimationDuration)
-        rotationAnimation.repeatCount = HUGE
-        self.outerView.layer.addAnimation(rotationAnimation, forKey: "rotateOuter")
+        if((self.outerView.layer.animationForKey("rotateOuter")) == nil){
+            let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+            rotationAnimation.fromValue = 360 * CGFloat(M_PI/180)
+            rotationAnimation.toValue = 0 * CGFloat(M_PI/180)
+            rotationAnimation.duration = Double(outerAnimationDuration)
+            rotationAnimation.repeatCount = HUGE
+            self.outerView.layer.addAnimation(rotationAnimation, forKey: "rotateOuter")
+        }
     }
     
     func startAnimating(){
@@ -197,16 +200,15 @@ public class MKNSpinner: UIView {
     }
     
     public class func show(title: String, animated: Bool = true) -> MKNSpinner {
-        
-        let window:UIWindow = UIApplication.sharedApplication().windows.first!
+
+        let window = UIApplication.sharedApplication().windows.first!
         let spinner = MKNSpinner.sharedInstance
-        
-        spinner.Style = MKNSpinner.SpinnerStyle.Light
-        spinner.label.text = title
+
+        if(!UIApplication.sharedApplication().isIgnoringInteractionEvents()){
+            UIApplication.sharedApplication().beginIgnoringInteractionEvents()
+        }
         spinner.updateFrame()
-        spinner.startAnimating()
-        UIApplication.sharedApplication().beginIgnoringInteractionEvents()
-        spinner.userInteractionEnabled = false
+        
         if spinner.superview == nil {
             //show the spinner
             spinner.alpha = 0.0
@@ -219,14 +221,16 @@ public class MKNSpinner: UIView {
             // Orientation change observer
             NSNotificationCenter.defaultCenter().addObserver(
                 spinner,
-                selector: #selector(MKNSpinner.updateFrame),
+                selector: #selector(updateFrame),
                 name: UIApplicationDidChangeStatusBarOrientationNotification,
                 object: nil)
         }
         
-        
+        spinner.label.text = title
         spinner.isShown = true
+        spinner.startAnimating()
         return spinner
+        
     }
     
     public class func hide(completion: (() -> Void)? = nil) {
@@ -236,7 +240,9 @@ public class MKNSpinner: UIView {
         NSNotificationCenter.defaultCenter().removeObserver(spinner)
         
         dispatch_async(dispatch_get_main_queue(), {
-            UIApplication.sharedApplication().endIgnoringInteractionEvents()
+            if(UIApplication.sharedApplication().isIgnoringInteractionEvents()){
+                UIApplication.sharedApplication().endIgnoringInteractionEvents()
+            }
             //UIApplication.sharedApplication().beginIgnoringInteractionEvents()
             spinner.userInteractionEnabled = true
             if spinner.superview == nil {
