@@ -34,7 +34,7 @@ Pod::Spec.new do |s|
  s.source       = { :git => "https://github.com/malkouz/MKSpinner.git", :tag => "#{s.version}" }
 
 
-  s.source_files  = "Classes", "Classes/*"
+  s.source_files  = "Classes", "Classes/**/*.{h,m}"
   s.exclude_files = "Classes/Exclude"
 
 

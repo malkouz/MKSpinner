@@ -1,0 +1,10 @@
+framework module MKSpinner {
+  umbrella header "MKSpinner-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module MKSpinner.__Swift {
+    exclude header "MKSpinner-Swift.h"
+}
