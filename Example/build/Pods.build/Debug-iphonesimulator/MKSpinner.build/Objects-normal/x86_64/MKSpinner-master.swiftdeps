@@ -1,6 +1,0 @@
-version: "Apple Swift version 3.1 (swiftlang-802.0.53 clang-802.0.42)"
-options: "caf9bf737f1f1a7cd4f40b4e55c7a845"
-build_time: [555495636, 157625000]
-inputs:
-  "/MyGitHubProjects/MKSpinner/MKSpinner/Classes/MKFullSpinner.swift": [555489882, 0]
-  "/MyGitHubProjects/MKSpinner/MKSpinner/Classes/MKNSpinner.swift": [555489662, 0]
