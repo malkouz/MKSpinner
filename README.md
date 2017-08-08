@@ -1,10 +1,12 @@
-# MKSpinner
+## MKSpinner
 
 [![Version](https://img.shields.io/cocoapods/v/MKSpinner.svg?style=flat)](http://cocoapods.org/pods/MKSpinner)
 [![License](https://img.shields.io/cocoapods/l/MKSpinner.svg?style=flat)](http://cocoapods.org/pods/MKSpinner)
 [![Platform](https://img.shields.io/cocoapods/p/MKSpinner.svg?style=flat)](http://cocoapods.org/pods/MKSpinner)
 
-## Example
+## Beautiful activity indicator.
+
+Beautiful activity indicator. Same of SwiftSpinner with changed animation (https://github.com/icanzilb/SwiftSpinner)
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
