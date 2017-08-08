@@ -31,7 +31,8 @@ Pod::Spec.new do |s|
 
 
   s.platform     = :ios, "8.0"
- s.source       = { :git => "https://github.com/malkouz/MKSpinner.git", :tag => "#{s.version} , :flatten => true" }
+ //s.source       = { :git => "https://github.com/malkouz/MKSpinner.git", :tag => "#{s.version}" }
+s.source       = { :git => "https://github.com/malkouz/MKSpinner.git", :commit => "5c41a5650af479f11d25de2ffe1d0e2e0c631580" }
 
 
 s.source_files = 'Classes/*.swift'
