@@ -22,15 +22,14 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func showFullSpinner(sender: UIButton){
-        MKFullSpinner.show("Full Spinner")
-        self.performSelector(#selector(ViewController.hideFullSpinner), withObject: nil, afterDelay: 10)
+    @IBAction func showFullSpinner(_ sender: UIButton){
+        _ = MKFullSpinner.show("Full Spinner")
+        self.perform(#selector(ViewController.hideFullSpinner), with: nil, afterDelay: 10)
     }
     
-    @IBAction func ShowASpinner(sender: UIButton){
-        MKNSpinner.show("N Spinner")
-    self.performSelector(#selector(ViewController.hideNSpinner), withObject: nil, afterDelay: 10)
-//        MKFullSpinner.showWithDelay(10, title: "Full Spinner", animated: true);
+    @IBAction func ShowASpinner(_ sender: UIButton){
+        _ = MKNSpinner.show("N Spinner")
+        self.perform(#selector(ViewController.hideNSpinner), with: nil, afterDelay: 10)
     }
     
     func hideFullSpinner(){

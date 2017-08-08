@@ -10,37 +10,37 @@ import UIKit
 
 
 
-public class MKNSpinner: UIView {
+open class MKNSpinner: UIView {
     
     enum SpinnerStyle : Int{
-        case None = 0
-        case Light = 1
-        case Dark = 2
+        case none = 0
+        case light = 1
+        case dark = 2
     }
     
-    var Style : SpinnerStyle = .None
+    var Style : SpinnerStyle = .none
     
-    public var hidesWhenStopped : Bool = false
+    open var hidesWhenStopped : Bool = false
     
-    public var outerFillColor : UIColor = UIColor.clearColor()
-    public var outerStrokeColor : UIColor = UIColor.grayColor()
-    public var outerLineWidth : CGFloat = 5.0
-    public var outerEndStroke : CGFloat = 0.5
-    public var outerAnimationDuration : CGFloat = 2.0
+    open var outerFillColor : UIColor = UIColor.clear
+    open var outerStrokeColor : UIColor = UIColor.gray
+    open var outerLineWidth : CGFloat = 5.0
+    open var outerEndStroke : CGFloat = 0.5
+    open var outerAnimationDuration : CGFloat = 2.0
     
-    public var enableInnerLayer : Bool = true
+    open var enableInnerLayer : Bool = true
     
-    public var innerFillColor : UIColor  = UIColor.clearColor()
-    public var innerStrokeColor : UIColor = UIColor.grayColor()
-    public var innerLineWidth : CGFloat = 5.0
-    public var innerEndStroke : CGFloat = 0.5
-    public var innerAnimationDuration : CGFloat = 1.6
+    open var innerFillColor : UIColor  = UIColor.clear
+    open var innerStrokeColor : UIColor = UIColor.gray
+    open var innerLineWidth : CGFloat = 5.0
+    open var innerEndStroke : CGFloat = 0.5
+    open var innerAnimationDuration : CGFloat = 1.6
     
-    public var labelText : String  = ""
-    public var labelFont : String  = "Helvetica"
-    public var labelTextColor : UIColor  = UIColor.blackColor()
+    open var labelText : String  = ""
+    open var labelFont : String  = "Helvetica"
+    open var labelTextColor : UIColor  = UIColor.black
     
-    public var labelFontSize : CGFloat = 11.0
+    open var labelFontSize : CGFloat = 11.0
     
     var currentInnerRotation : CGFloat = 0
     var currentOuterRotation : CGFloat = 0
@@ -62,7 +62,7 @@ public class MKNSpinner: UIView {
     }
     
     func commonInit(){
-        self.Style = MKNSpinner.SpinnerStyle.Light
+        self.Style = MKNSpinner.SpinnerStyle.light
         let background = UIView(frame: self.frame)
         background.alpha = 0.75
         background.backgroundColor = UIColor(red: 43.0/255.0, green: 132.0/255.0, blue: 200.0/255.0, alpha: 1)
@@ -75,54 +75,54 @@ public class MKNSpinner: UIView {
         
         
         
-        self.backgroundColor = UIColor.clearColor()
+        self.backgroundColor = UIColor.clear
         
         switch Style{
-        case .Dark:
-            outerStrokeColor = UIColor.grayColor()
-            innerStrokeColor = UIColor.grayColor()
-            labelTextColor = UIColor.grayColor()
-        case .Light:
+        case .dark:
+            outerStrokeColor = UIColor.gray
+            innerStrokeColor = UIColor.gray
+            labelTextColor = UIColor.gray
+        case .light:
             outerStrokeColor = UIColor ( red: 0.9333, green: 0.9333, blue: 0.9333, alpha: 1.0 )
             innerStrokeColor = UIColor ( red: 0.9333, green: 0.9333, blue: 0.9333, alpha: 1.0 )
             labelTextColor = UIColor ( red: 0.9333, green: 0.9333, blue: 0.9333, alpha: 1.0 )
-        case .None:
+        case .none:
             break
         }
         
         
         self.addSubview(outerView)
-        outerView.frame = CGRectMake(10 , 10, self.frame.size.width-20, self.frame.size.height-20)
+        outerView.frame = CGRect(x: 10 , y: 10, width: self.frame.size.width-20, height: self.frame.size.height-20)
         outerView.center = self.center//self.convertPoint(self.center, fromCoordinateSpace: self.superview!)
         
         let outerLayer = CAShapeLayer()
-        outerLayer.path = UIBezierPath(ovalInRect: outerView.bounds).CGPath
+        outerLayer.path = UIBezierPath(ovalIn: outerView.bounds).cgPath
         outerLayer.lineWidth = outerLineWidth
         outerLayer.strokeStart = 0.0
         outerLayer.strokeEnd = outerEndStroke
         outerLayer.lineCap = kCALineCapRound
-        outerLayer.fillColor = outerFillColor.CGColor
-        outerLayer.strokeColor = outerStrokeColor.CGColor
+        outerLayer.fillColor = outerFillColor.cgColor
+        outerLayer.strokeColor = outerStrokeColor.cgColor
         outerView.layer.addSublayer(outerLayer)
         
         if enableInnerLayer{
             
             self.addSubview(innerView)
-            innerView.frame = CGRectMake(0 , 0, self.frame.size.width - 40, self.frame.size.height - 40)
+            innerView.frame = CGRect(x: 0 , y: 0, width: self.frame.size.width - 40, height: self.frame.size.height - 40)
             innerView.center =  self.center//self.convertPoint(self.center, fromCoordinateSpace: self.superview!)
             let innerLayer = CAShapeLayer()
-            innerLayer.path = UIBezierPath(ovalInRect: innerView.bounds).CGPath
+            innerLayer.path = UIBezierPath(ovalIn: innerView.bounds).cgPath
             innerLayer.lineWidth = innerLineWidth
             innerLayer.strokeStart = 0
             innerLayer.strokeEnd = innerEndStroke
             innerLayer.lineCap = kCALineCapRound
-            innerLayer.fillColor = innerFillColor.CGColor
-            innerLayer.strokeColor = innerStrokeColor.CGColor
+            innerLayer.fillColor = innerFillColor.cgColor
+            innerLayer.strokeColor = innerStrokeColor.cgColor
             
             innerView.layer.addSublayer(innerLayer)
         }
         
-        label = UILabel(frame: CGRectMake(0, 0, 100, 21))
+        label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 21))
         
         label.text = labelText
         label.textColor = labelTextColor
@@ -138,8 +138,8 @@ public class MKNSpinner: UIView {
          label.frame.size.height = outerView.frame.size.height
          }*/
         label.numberOfLines = 0
-        label.lineBreakMode = .ByWordWrapping
-        label.textAlignment = .Center
+        label.lineBreakMode = .byWordWrapping
+        label.textAlignment = .center
         label.center = self.center//self.convertPoint(self.center, fromCoordinateSpace: self.superview!)
         
         self.startAnimating()
@@ -149,25 +149,25 @@ public class MKNSpinner: UIView {
     func animateInnerRing(){
         
         let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
-        rotationAnimation.fromValue = 0 * CGFloat(M_PI/180)
-        rotationAnimation.toValue = 360 * CGFloat(M_PI/180)
+        rotationAnimation.fromValue = 0 * CGFloat(Double.pi/180)
+        rotationAnimation.toValue = 360 * CGFloat(Double.pi/180)
         rotationAnimation.duration = Double(innerAnimationDuration)
         rotationAnimation.repeatCount = HUGE
-        self.innerView.layer.addAnimation(rotationAnimation, forKey: "rotateInner")
+        self.innerView.layer.add(rotationAnimation, forKey: "rotateInner")
     }
     func animateOuterRing(){
         
         let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
-        rotationAnimation.fromValue = 360 * CGFloat(M_PI/180)
-        rotationAnimation.toValue = 0 * CGFloat(M_PI/180)
+        rotationAnimation.fromValue = 360 * CGFloat(Double.pi/180)
+        rotationAnimation.toValue = 0 * CGFloat(Double.pi/180)
         rotationAnimation.duration = Double(outerAnimationDuration)
         rotationAnimation.repeatCount = HUGE
-        self.outerView.layer.addAnimation(rotationAnimation, forKey: "rotateOuter")
+        self.outerView.layer.add(rotationAnimation, forKey: "rotateOuter")
     }
     
     func startAnimating(){
         
-        self.hidden = false
+        self.isHidden = false
         
         self.animateOuterRing()
         self.animateInnerRing()
@@ -175,7 +175,7 @@ public class MKNSpinner: UIView {
     
     func stopAnimating(){
         if hidesWhenStopped{
-            self.hidden = true
+            self.isHidden = true
         }
         self.outerView.layer.removeAllAnimations()
         self.innerView.layer.removeAllAnimations()
@@ -185,42 +185,42 @@ public class MKNSpinner: UIView {
     var isShown:Bool = false
     
     func updateFrame() {
-        let window:UIWindow = UIApplication.sharedApplication().windows.first!
+        let window:UIWindow = UIApplication.shared.windows.first!
         MKNSpinner.sharedInstance.center = window.center
     }
     
-    public class var sharedInstance: MKNSpinner {
+    open class var sharedInstance: MKNSpinner {
         struct Singleton {
-            static let instance = MKNSpinner(frame: CGRectMake(0,0,140,140))
+            static let instance = MKNSpinner(frame: CGRect(x: 0,y: 0,width: 140,height: 140))
         }
         return Singleton.instance
     }
     
-    public class func show(title: String, animated: Bool = true) -> MKNSpinner {
+    open class func show(_ title: String, animated: Bool = true) -> MKNSpinner {
         
-        let window:UIWindow = UIApplication.sharedApplication().windows.first!
+        let window:UIWindow = UIApplication.shared.windows.first!
         let spinner = MKNSpinner.sharedInstance
         
-        spinner.Style = MKNSpinner.SpinnerStyle.Light
+        spinner.Style = MKNSpinner.SpinnerStyle.light
         spinner.label.text = title
         spinner.updateFrame()
         spinner.startAnimating()
-        UIApplication.sharedApplication().beginIgnoringInteractionEvents()
-        spinner.userInteractionEnabled = false
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        spinner.isUserInteractionEnabled = false
         if spinner.superview == nil {
             //show the spinner
             spinner.alpha = 0.0
             window.addSubview(spinner)
             
-            UIView.animateWithDuration(0.33, delay: 0.0, options: .CurveEaseOut, animations: {
+            UIView.animate(withDuration: 0.33, delay: 0.0, options: .curveEaseOut, animations: {
                 spinner.alpha = 1.0
                 }, completion: nil)
             
             // Orientation change observer
-            NSNotificationCenter.defaultCenter().addObserver(
+            NotificationCenter.default.addObserver(
                 spinner,
                 selector: #selector(MKNSpinner.updateFrame),
-                name: UIApplicationDidChangeStatusBarOrientationNotification,
+                name: NSNotification.Name.UIApplicationDidChangeStatusBarOrientation,
                 object: nil)
         }
         
@@ -229,22 +229,22 @@ public class MKNSpinner: UIView {
         return spinner
     }
     
-    public class func hide(completion: (() -> Void)? = nil) {
+    open class func hide(_ completion: (() -> Void)? = nil) {
         
         let spinner = MKNSpinner.sharedInstance
         
-        NSNotificationCenter.defaultCenter().removeObserver(spinner)
+        NotificationCenter.default.removeObserver(spinner)
         
-        dispatch_async(dispatch_get_main_queue(), {
-            UIApplication.sharedApplication().endIgnoringInteractionEvents()
+        DispatchQueue.main.async(execute: {
+            UIApplication.shared.endIgnoringInteractionEvents()
             //UIApplication.sharedApplication().beginIgnoringInteractionEvents()
-            spinner.userInteractionEnabled = true
+            spinner.isUserInteractionEnabled = true
             if spinner.superview == nil {
                 spinner.isShown = false
                 return
             }
             
-            UIView.animateWithDuration(0.33, delay: 0.0, options: .CurveEaseOut, animations: {
+            UIView.animate(withDuration: 0.33, delay: 0.0, options: .curveEaseOut, animations: {
                 spinner.alpha = 0.0
                 }, completion: {_ in
                     spinner.alpha = 1.0
