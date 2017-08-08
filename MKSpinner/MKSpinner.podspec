@@ -34,8 +34,6 @@ Pod::Spec.new do |s|
  s.source       = { :git => "https://github.com/malkouz/MKSpinner.git", :tag => "#{s.version}" }
 
 
-s.source_files = 'Classes/*.swift'
-s.requires_arc = true
 
 
 
