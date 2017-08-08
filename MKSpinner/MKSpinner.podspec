@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MKSpinner"
-  s.version      = "1.3"
+  s.version      = "1.3.1"
   s.summary      = "a fantastic spinners."
 
   s.description  = "a fantastic spinners"
