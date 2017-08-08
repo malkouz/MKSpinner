@@ -1,0 +1,6 @@
+framework module MKSpinner {
+  umbrella header "MKSpinner-umbrella.h"
+
+  export *
+  module * { export * }
+}
