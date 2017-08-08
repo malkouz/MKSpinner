@@ -1,0 +1,16 @@
+PODS:
+  - MKSpinner (1.3.3)
+
+DEPENDENCIES:
+  - MKSpinner (from `../../../`)
+
+EXTERNAL SOURCES:
+  MKSpinner:
+    :path: ../../../
+
+SPEC CHECKSUMS:
+  MKSpinner: 59e51bac8e42fd0aec4259f61dda8e3c4248d9ec
+
+PODFILE CHECKSUM: 0dd1becd8926a6ceb4d70b96b0c33e8fbfac3881
+
+COCOAPODS: 1.2.1
