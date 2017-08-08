@@ -1,7 +1,0 @@
-use_frameworks!
-
-target 'PROJECT_Example' do
-  pod ‘MKSpinner’, :path => ‘../../../‘
-
-  
-end
