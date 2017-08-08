@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MKSpinner"
-  s.version      = "1.3"
+  s.version      = "1.3.1"
   s.summary      = "Beautiful activity indicator."
 
   s.description  = "Beautiful activity indicator. Same of SwiftSpinner with changed animation (https://github.com/icanzilb/SwiftSpinner)"
@@ -34,7 +34,7 @@ Pod::Spec.new do |s|
  s.source       = { :git => "https://github.com/malkouz/MKSpinner.git", :tag => "#{s.version}" }
 
 
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
+  s.source_files  = "Classes", "Classes/*"
   s.exclude_files = "Classes/Exclude"
 
 
