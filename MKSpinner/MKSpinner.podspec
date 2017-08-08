@@ -8,34 +8,34 @@
 
 Pod::Spec.new do |s|
 
-  # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  These will help people to find your library, and whilst it
-  #  can feel like a chore to fill in it's definitely to your advantage. The
-  #  summary should be tweet-length, and the description more in depth.
-  #
+# ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
+#
+#  These will help people to find your library, and whilst it
+#  can feel like a chore to fill in it's definitely to your advantage. The
+#  summary should be tweet-length, and the description more in depth.
+#
 
-  s.name         = "MKSpinner"
-  s.version      = "1.3"
-  s.summary      = "a fantastic spinners."
+s.name         = "MKSpinner"
+s.version      = "1.3.0"
+s.summary      = "Beautiful activity indicator."
 
-  s.description  = "a fantastic spinners"
+s.description  = "Beautiful activity indicator. Same of SwiftSpinner with changed animation (https://github.com/icanzilb/SwiftSpinner)"
 
-  s.homepage     = "https://github.com/malkouz/MKSpinner"
+s.homepage     = "https://github.com/malkouz/MKSpinner"
 
-  s.license      = "MIT"
-
-
-  s.author             =  "Moayad Al kouz"
-  # s.social_media_url   = "http://twitter.com/malkouz"
+s.license      = "MIT"
 
 
-  s.platform     = :ios, "8.0"
- s.source       = { :git => "https://github.com/malkouz/MKSpinner.git", :tag => "#{s.version}" }
+s.author             =  "Moayad Al kouz"
+# s.social_media_url   = "http://twitter.com/malkouz"
 
 
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
-  s.exclude_files = "Classes/Exclude"
+s.platform     = :ios, "8.0"
+s.source       = { :git => "https://github.com/malkouz/MKSpinner.git", :tag => "#{s.version}" }
 
 
- end
+s.source_files  = "Classes", "Classes/**/*.{h,m}"
+s.exclude_files = "Classes/Exclude"
+
+
+end
