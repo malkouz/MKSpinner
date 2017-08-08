@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MKSpinner"
-  s.version      = "1.3.1"
+  s.version      = "1.3.2"
   s.summary      = "Beautiful activity indicator."
 
   s.description  = "Beautiful activity indicator. Same of SwiftSpinner with changed animation (https://github.com/icanzilb/SwiftSpinner)"
