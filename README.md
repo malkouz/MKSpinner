@@ -1,6 +1,5 @@
 # MKSpinner
 
-[![CI Status](http://img.shields.io/travis/malkouz/MKSpinner.svg?style=flat)](https://travis-ci.org/Moayad Al kouz/MKSpinner)
 [![Version](https://img.shields.io/cocoapods/v/MKSpinner.svg?style=flat)](http://cocoapods.org/pods/MKSpinner)
 [![License](https://img.shields.io/cocoapods/l/MKSpinner.svg?style=flat)](http://cocoapods.org/pods/MKSpinner)
 [![Platform](https://img.shields.io/cocoapods/p/MKSpinner.svg?style=flat)](http://cocoapods.org/pods/MKSpinner)
@@ -13,6 +12,7 @@ Beautiful activity indicator. Same of SwiftSpinner with changed animation (https
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+iOS 8 or later 
 
 ## Installation
 
