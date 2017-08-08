@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double MKSpinnerVersionNumber;
-FOUNDATION_EXPORT const unsigned char MKSpinnerVersionString[];
+FOUNDATION_EXPORT double Pods_PROJECT_ExampleVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_PROJECT_ExampleVersionString[];
 
