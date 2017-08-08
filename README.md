@@ -9,8 +9,11 @@
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+iOS 8.0 or later
 
 ## Installation
+Beautiful activity indicator. Same of SwiftSpinner with changed animation (https://github.com/icanzilb/SwiftSpinner)
+
 
 MKSpinner is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:

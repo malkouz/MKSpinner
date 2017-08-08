@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MKSpinner"
-  s.version      = "1.0.1"
+  s.version      = "1.3"
   s.summary      = "a fantastic spinners."
 
   s.description  = "a fantastic spinners"
@@ -30,7 +30,7 @@ Pod::Spec.new do |s|
   # s.social_media_url   = "http://twitter.com/malkouz"
 
 
-  s.platform     = :ios, “8.0”
+  s.platform     = :ios, "8.0"
  s.source       = { :git => "https://github.com/malkouz/MKSpinner.git", :tag => "#{s.version}" }
 
 
