@@ -1,6 +1,5 @@
 # MKSpinner
 
-[![CI Status](http://img.shields.io/travis/Moayad Al kouz/MKSpinner.svg?style=flat)](https://travis-ci.org/Moayad Al kouz/MKSpinner)
 [![Version](https://img.shields.io/cocoapods/v/MKSpinner.svg?style=flat)](http://cocoapods.org/pods/MKSpinner)
 [![License](https://img.shields.io/cocoapods/l/MKSpinner.svg?style=flat)](http://cocoapods.org/pods/MKSpinner)
 [![Platform](https://img.shields.io/cocoapods/p/MKSpinner.svg?style=flat)](http://cocoapods.org/pods/MKSpinner)
