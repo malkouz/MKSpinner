@@ -1,19 +1,19 @@
 {
   "name": "MKSpinner",
-  "version": "1.3.2",
-  "summary": "Beautiful activity indicator.",
-  "description": "Beautiful activity indicator. Same of SwiftSpinner with changed animation (https://github.com/icanzilb/SwiftSpinner)",
-  "homepage": "https://github.com/malkouz/MKSpinner",
+  "version": "0.1.0",
+  "summary": "A short description of MKSpinner.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/moayad_kouz9@hotmail.com/MKSpinner",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "Moayad Al kouz": "moayad_kouz9@hotmail.com"
+    "moayad_kouz9@hotmail.com": "malkouz@dopravo.com"
   },
   "source": {
-    "git": "https://github.com/malkouz/MKSpinner.git",
-    "tag": "1.3.2"
+    "git": "https://github.com/moayad_kouz9@hotmail.com/MKSpinner.git",
+    "tag": "0.1.0"
   },
   "platforms": {
     "ios": "8.0"

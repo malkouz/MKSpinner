@@ -9,7 +9,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-PROJECT_Example.xcscheme</key>
+		<key>Pods-Example.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Example_Tests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

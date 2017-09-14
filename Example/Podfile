@@ -1,7 +1,11 @@
 use_frameworks!
 
-target 'PROJECT_Example' do
+target 'Example' do
   pod 'MKSpinner', :path => '../'
 
-  
+  target 'Example_Tests' do
+    inherit! :search_paths
+
+    
+  end
 end
