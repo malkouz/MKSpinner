@@ -403,7 +403,7 @@ open class MKFullSpinner: UIView {
         }
     }
     
-    open func updateFrame() {
+    @objc open func updateFrame() {
         let window = UIApplication.shared.windows.first!
         MKFullSpinner.sharedInstance.frame = window.frame
     }

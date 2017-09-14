@@ -1,7 +1,7 @@
 use_frameworks!
 
 target 'PROJECT_Example' do
-  pod 'MKSpinner'
+  pod 'MKSpinner', :path => '../'
 
   
 end

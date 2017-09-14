@@ -32,11 +32,11 @@ class ViewController: UIViewController {
         self.perform(#selector(ViewController.hideNSpinner), with: nil, afterDelay: 10)
     }
     
-    func hideFullSpinner(){
+    @objc func hideFullSpinner(){
         MKFullSpinner.hide()
     }
     
-    func hideNSpinner(){
+    @objc func hideNSpinner(){
         MKNSpinner.hide()
     }
 

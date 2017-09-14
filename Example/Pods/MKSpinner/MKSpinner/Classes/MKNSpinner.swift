@@ -184,7 +184,7 @@ open class MKNSpinner: UIView {
     
     var isShown:Bool = false
     
-    func updateFrame() {
+    @objc func updateFrame() {
         let window:UIWindow = UIApplication.shared.windows.first!
         MKNSpinner.sharedInstance.center = window.center
     }
