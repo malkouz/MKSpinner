@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
 s.name             = 'MKSpinner'
-s.version          = '1.4'
+s.version          = '1.4.1'
 s.summary          = 'Beautiful activity indicator.'
 
 # This description is used to generate tags and improve search results.

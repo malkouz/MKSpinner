@@ -40,6 +40,8 @@ open class MKFullSpinner: UIView {
     // Custom init to build the spinner UI
     //
     
+    fileprivate var animationDuration: Double = 1.0
+    
     public override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -67,7 +69,7 @@ open class MKFullSpinner: UIView {
         outerCircle.lineWidth = 8.0
         outerCircle.strokeStart = 0.0
         outerCircle.strokeEnd = 0.45
-        outerCircle.lineCap = kCALineCapRound
+        outerCircle.lineCap = CAShapeLayerLineCap.round
         outerCircle.fillColor = UIColor.clear.cgColor
         outerCircle.strokeColor = UIColor.white.cgColor
         outerCircleView.layer.addSublayer(outerCircle)
@@ -84,7 +86,7 @@ open class MKFullSpinner: UIView {
         innerCircle.lineWidth = 4.0
         innerCircle.strokeStart = 0.5
         innerCircle.strokeEnd = 0.9
-        innerCircle.lineCap = kCALineCapRound
+        innerCircle.lineCap = CAShapeLayerLineCap.round
         innerCircle.fillColor = UIColor.clear.cgColor
         innerCircle.strokeColor = UIColor.gray.cgColor
         innerCircleView.layer.addSublayer(innerCircle)
@@ -109,11 +111,11 @@ open class MKFullSpinner: UIView {
     //
     // Show the spinner activity on screen, if visible only update the title
     //
-    open class func show(_ title: String, animated: Bool = true) -> MKFullSpinner {
+    open class func show(_ title: String, animated: Bool = true, duration: Double = 1.0) -> MKFullSpinner {
         
         let window = UIApplication.shared.windows.first!
         let spinner = MKFullSpinner.sharedInstance
-        
+        spinner.animationDuration = duration
         spinner.showWithDelayBlock = nil
         spinner.clearTapHandler()
         
@@ -133,7 +135,7 @@ open class MKFullSpinner: UIView {
             NotificationCenter.default.addObserver(
                 spinner,
                 selector: #selector(updateFrame),
-                name: NSNotification.Name.UIApplicationDidChangeStatusBarOrientation,
+                name: UIApplication.didChangeStatusBarOrientationNotification,
                 object: nil)
         }
         
@@ -147,7 +149,7 @@ open class MKFullSpinner: UIView {
     // Show the spinner activity on screen, after delay. If new call to show,
     // showWithDelay or hide is maked before execution this call is discarded
     //
-    open class func showWithDelay(_ delay: Double, title: String, animated: Bool = true) -> MKFullSpinner {
+    open class func showWithDelay(_ delay: Double, title: String, animated: Bool = true, duration: Double = 1.0) -> MKFullSpinner {
         let spinner = MKFullSpinner.sharedInstance
         
         spinner.showWithDelayBlock = {
@@ -326,7 +328,7 @@ open class MKFullSpinner: UIView {
     // layout elements
     //
     
-    fileprivate var blurEffectStyle: UIBlurEffectStyle = .dark
+    fileprivate var blurEffectStyle: UIBlurEffect.Style = .dark
     fileprivate var blurEffect: UIBlurEffect!
     fileprivate var blurView: UIVisualEffectView!
     fileprivate var vibrancyView: UIVisualEffectView!
@@ -373,10 +375,10 @@ open class MKFullSpinner: UIView {
         if self.animating {
             let rotation : CABasicAnimation = CABasicAnimation(keyPath:"transform.rotation.z")
             
-            rotation.duration = 1.0
+            rotation.duration = animationDuration
             rotation.isRemovedOnCompletion = false
             rotation.repeatCount = HUGE
-            rotation.fillMode = kCAFillModeForwards
+            rotation.fillMode = CAMediaTimingFillMode.forwards
             rotation.fromValue = NSNumber(value: 0.0 as Float)
             rotation.toValue = NSNumber(value: 3.14 * 2.0 as Float)
             
@@ -403,10 +405,10 @@ open class MKFullSpinner: UIView {
         if self.animating {
             let rotation : CABasicAnimation = CABasicAnimation(keyPath:"transform.rotation.z")
             
-            rotation.duration = 1.0
+            rotation.duration = animationDuration
             rotation.isRemovedOnCompletion = false
             rotation.repeatCount = HUGE
-            rotation.fillMode = kCAFillModeForwards
+            rotation.fillMode = CAMediaTimingFillMode.forwards
             rotation.fromValue = NSNumber(value: 0.0 as Float)
             rotation.toValue = NSNumber(value: -3.14 * 2.0 as Float)
             

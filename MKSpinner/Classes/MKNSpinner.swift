@@ -61,7 +61,7 @@ open class MKNSpinner: UIView {
     var outerView : UIView = UIView()
     
     var label: UILabel!
-    
+    fileprivate var animationDuration: Double = 1.0
     override public init(frame: CGRect) {
         super.init(frame: frame)
         self.commonInit()
@@ -112,7 +112,7 @@ open class MKNSpinner: UIView {
         outerLayer.lineWidth = outerLineWidth
         outerLayer.strokeStart = 0.0
         outerLayer.strokeEnd = outerEndStroke
-        outerLayer.lineCap = kCALineCapRound
+        outerLayer.lineCap = CAShapeLayerLineCap.round
         outerLayer.fillColor = outerFillColor.cgColor
         outerLayer.strokeColor = outerStrokeColor.cgColor
         outerView.layer.addSublayer(outerLayer)
@@ -127,7 +127,7 @@ open class MKNSpinner: UIView {
             innerLayer.lineWidth = innerLineWidth
             innerLayer.strokeStart = 0
             innerLayer.strokeEnd = innerEndStroke
-            innerLayer.lineCap = kCALineCapRound
+            innerLayer.lineCap = CAShapeLayerLineCap.round
             innerLayer.fillColor = innerFillColor.cgColor
             innerLayer.strokeColor = innerStrokeColor.cgColor
             
@@ -208,11 +208,11 @@ open class MKNSpinner: UIView {
         return Singleton.instance
     }
     
-    open class func show(_ title: String, animated: Bool = true) -> MKNSpinner {
+    open class func show(_ title: String, animated: Bool = true, duration: Double = 1.0) -> MKNSpinner {
         
         let window:UIWindow = UIApplication.shared.windows.first!
         let spinner = MKNSpinner.sharedInstance
-        
+        spinner.animationDuration = duration
         spinner.Style = MKNSpinner.SpinnerStyle.light
         spinner.label.text = title
         spinner.updateFrame()
@@ -232,7 +232,7 @@ open class MKNSpinner: UIView {
             NotificationCenter.default.addObserver(
                 spinner,
                 selector: #selector(MKNSpinner.updateFrame),
-                name: NSNotification.Name.UIApplicationDidChangeStatusBarOrientation,
+                name: UIApplication.didChangeStatusBarOrientationNotification,
                 object: nil)
         }
         

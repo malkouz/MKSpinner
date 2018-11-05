@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showFullSpinner(_ sender: UIButton){
-        _ = MKFullSpinner.show("Full Spinner")
+        _ = MKFullSpinner.show("Full Spinner", animated: true, duration: 3.0)
         self.perform(#selector(ViewController.hideFullSpinner), with: nil, afterDelay: 10)
     }
     
